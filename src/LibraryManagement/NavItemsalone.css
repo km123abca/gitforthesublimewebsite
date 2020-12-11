@@ -1,0 +1,31 @@
+:root {
+  --bg: #242526;
+  --bg-accent: #484a4d;
+  --text-color: #dadce1;
+  --nav-size: 60px;
+  --border: 1px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 500ms;
+}
+.navItemssalone__nav-item {
+  width: calc(var(--nav-size) * 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__smallScreen {
+  display: none;
+}
+@media (max-width: 600px) {
+  .header__smallScreen {
+    display: block;
+  }
+}
+.header__largeScreen {
+  display: none;
+}
+@media (min-width: 601px) {
+  .header__largeScreen {
+    display: block;
+  }
+}
