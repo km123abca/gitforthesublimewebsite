@@ -1,0 +1,12 @@
+.addNewBook__form {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-evenly;
+}
+@media (max-width: 656px) {
+  .addNewBook__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
