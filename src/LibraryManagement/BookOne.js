@@ -1,7 +1,8 @@
 import React from "react";
 import "./BookOne.css";
+import db from "../firebase";
 import { Button } from "@material-ui/core";
-function BookOne({ imgsrc, bookdesc }) {
+function BookOne({ id, imgsrc, bookdesc }) {
   let onbpress = () => {
     console.log("button was pressed");
   };
@@ -17,6 +18,14 @@ function BookOne({ imgsrc, bookdesc }) {
           className="bookOne_imagedescbutton"
         >
           Rent this Book
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={(event) => db.collection("books").doc(id).delete()}
+          className="bookOne_imagedescbutton"
+        >
+          Delete
         </Button>
       </div>
     </div>

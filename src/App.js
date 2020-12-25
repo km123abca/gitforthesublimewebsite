@@ -1,10 +1,38 @@
+import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Library from "./LibraryManagement/Library";
 import Books from "./LibraryManagement/Books";
 import Login from "./LibraryManagement/Login";
 import AddNewBook from "./LibraryManagement/AddNewBook";
+import { auth } from "./firebase";
+import { useStateValue } from "./StateProvider";
+import Logout from "./LibraryManagement/Logout";
 function App() {
+  const [{ user }, dispatch] = useStateValue();
+  useEffect(() => {
+    const unsuscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        //user is logged in
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+        // dispatch({ type: "SET_BASKET_ON_RELOAD" });
+      } else {
+        //user is logged out
+        dispatch({
+          type: "SET_USER",
+          user: { email: "Guest" },
+        });
+        // dispatch({ type: "SET_BASKET_ON_RELOAD" });
+      }
+    });
+
+    return () => {
+      unsuscribe();
+    };
+  }, []);
   return (
     <div className="app">
       <Router>
@@ -20,6 +48,9 @@ function App() {
           </Route>
           <Route exact path="/library/login">
             <Login />
+          </Route>
+          <Route exact path="/library/logout">
+            <Logout />
           </Route>
 
           <Route path="/p2">

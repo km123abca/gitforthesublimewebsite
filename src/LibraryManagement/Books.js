@@ -39,14 +39,17 @@ function Books() {
           return (
             <div className={"books__bookrow"}>
               <BookOne
+                id={books[ind].id}
                 imgsrc={books[ind].bookImage}
                 bookdesc={books[ind].bookDesc}
               />
               <BookOne
+                id={books[ind + 1].id}
                 imgsrc={books[ind + 1].bookImage}
                 bookdesc={books[ind + 1].bookDesc}
               />
               <BookOne
+                id={books[ind + 2].id}
                 imgsrc={books[ind + 2].bookImage}
                 bookdesc={books[ind + 2].bookDesc}
               />
@@ -56,6 +59,7 @@ function Books() {
       {books.length % 3 == 1 ? (
         <div className={"books__bookrow"}>
           <BookOne
+            id={books[books.length - 1].id}
             imgsrc={books[books.length - 1].bookImage}
             bookdesc={books[books.length - 1].bookDesc}
           />
@@ -63,10 +67,12 @@ function Books() {
       ) : books.length % 3 == 2 ? (
         <div className={"books__bookrow"}>
           <BookOne
+            id={books[books.length - 2].id}
             imgsrc={books[books.length - 2].bookImage}
             bookdesc={books[books.length - 2].bookDesc}
           />
           <BookOne
+            id={books[books.length - 1].id}
             imgsrc={books[books.length - 1].bookImage}
             bookdesc={books[books.length - 1].bookDesc}
           />
