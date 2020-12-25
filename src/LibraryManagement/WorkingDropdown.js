@@ -27,14 +27,56 @@ function Booksdd() {
         onEnter={calcHeight}
       >
         <div className="cssTrans__menu">
-          <a href="#" className="dropdownItemsalone__menu-item">
-            View All
+          <a
+            href="#"
+            className="dropdownItemsalone__menu-item"
+            onClick={() => setActiveMenu("dummy")}
+          >
+            item1
+          </a>
+          <a
+            href="#"
+            className="dropdownItemsalone__menu-item"
+            onClick={() => setActiveMenu("dummy")}
+          >
+            item1
+          </a>
+          <a
+            href="#"
+            className="dropdownItemsalone__menu-item"
+            onClick={() => setActiveMenu("dummy")}
+          >
+            item1
+          </a>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu == "dummy"}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="cssTrans__menu">
+          <a
+            href="#"
+            className="dropdownItemsalone__menu-item"
+            onClick={() => setActiveMenu("main")}
+          >
+            back
           </a>
           <a href="#" className="dropdownItemsalone__menu-item">
-            View by Category
+            dog
           </a>
           <a href="#" className="dropdownItemsalone__menu-item">
-            View by author
+            elephant
+          </a>
+          <a href="#" className="dropdownItemsalone__menu-item">
+            elephant
+          </a>
+          <a href="#" className="dropdownItemsalone__menu-item">
+            elephant
           </a>
         </div>
       </CSSTransition>
