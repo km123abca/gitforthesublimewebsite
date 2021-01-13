@@ -28,7 +28,7 @@ function DropdownMenusalone(props) {
         thisMenu="main"
         menuClassName="menu-primary"
         dropdownstuff={[
-          { name: "Home" },
+          { name: "Home", link: "/library/" },
           { name: "Books", goToMenu: "settings" },
           { name: "My Account", goToMenu: "accountfns" },
         ]}
@@ -41,9 +41,23 @@ function DropdownMenusalone(props) {
         menuClassName="menu-secondary"
         dropdownstuff={[
           { name: "Back", goToMenu: "main" },
-          { name: "View all" },
-          { name: "View by category" },
+          { name: "View all", link: "/library/books" },
+          { name: "View by category", goToMenu: "categ" },
           { name: "View by Author" },
+        ]}
+      />
+      <CssTrans
+        setMenuHeight={setMenuHeight}
+        setActiveMenu={setActiveMenu}
+        activeMenu={activeMenu}
+        thisMenu="categ"
+        menuClassName="menu-secondary"
+        dropdownstuff={[
+          { name: "Back", goToMenu: "settings" },
+          { name: "children" },
+          { name: "Thriller" },
+          { name: "Horror" },
+          { name: "Science Fiction" },
         ]}
       />
       <CssTrans

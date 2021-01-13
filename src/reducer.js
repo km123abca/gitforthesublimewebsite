@@ -1,5 +1,6 @@
 export const initialState = {
   user: { email: "guest" },
+  bookGenre: "all",
 };
 
 const getLocalData = (state) => {
@@ -25,6 +26,11 @@ function reducer(state, action) {
       return {
         ...state,
         user: { email: "guest" },
+      };
+    case "SET_GENRE":
+      return {
+        ...state,
+        bookGenre: action.genre,
       };
   }
 }

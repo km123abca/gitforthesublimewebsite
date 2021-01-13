@@ -13,8 +13,9 @@ function Header() {
   return (
     <div className="header">
       <div className="header__left">
-        <div className="header__subjects header__largeScreen">Home</div>
-        <div className="header__subjects header__largeScreen">Books</div>
+        <div className="header__subjects header__largeScreen">
+          <Link to="/library">Home</Link>
+        </div>
         <div className="header__subjects header__largeScreen">My Account</div>
         <div className="header__subjects header__largeScreen">
           <BooksMenu menutitle="books">
@@ -41,7 +42,7 @@ function Header() {
 
         <NavItemsalone
           className="header__subjects header__smallScreen"
-          menutitle="View"
+          menutitle="burger"
         >
           <DropdownMenusalone className="" />
         </NavItemsalone>

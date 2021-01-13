@@ -2,6 +2,7 @@ import React from "react";
 import { CSSTransition } from "react-transition-group";
 import "./CssTrans.css";
 import DropdownItemsalone from "./DropdownItemsalone";
+import { useHistory } from "react-router-dom";
 // menuClassName=menu-primary
 // thisMenu=main
 function CssTrans({
@@ -12,6 +13,7 @@ function CssTrans({
   dropdownstuff,
   setMenuHeight,
 }) {
+  const history = useHistory();
   function calcHeight(e) {
     const height = e.offsetHeight;
     setMenuHeight(height);
@@ -31,7 +33,14 @@ function CssTrans({
             goToMenu={item.goToMenu ? item.goToMenu : ""}
             setActiveMenu={setActiveMenu}
           >
-            {item.name}
+            {item.link ? (
+              <a href="#" onClick={() => history.push(item.link)}>
+                {/* history.push({ pathname: item.link })}> */}
+                {item.name}
+              </a>
+            ) : (
+              item.name
+            )}
           </DropdownItemsalone>
         ))}
       </div>

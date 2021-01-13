@@ -8,6 +8,8 @@ import AddNewBook from "./LibraryManagement/AddNewBook";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import Logout from "./LibraryManagement/Logout";
+import EditBook from "./LibraryManagement/EditBook";
+import BookDetailed from "./LibraryManagement/BookDetailed";
 function App() {
   const [{ user }, dispatch] = useStateValue();
   useEffect(() => {
@@ -45,6 +47,12 @@ function App() {
           </Route>
           <Route exact path="/library/add">
             <AddNewBook />
+          </Route>
+          <Route exact path="/library/edit/">
+            <EditBook />
+          </Route>
+          <Route exact path="/library/detailed/">
+            <BookDetailed />
           </Route>
           <Route exact path="/library/login">
             <Login />

@@ -10,3 +10,7 @@
     justify-content: space-between;
   }
 }
+
+.addNewBook__formcontrol {
+  min-width: 120px;
+}

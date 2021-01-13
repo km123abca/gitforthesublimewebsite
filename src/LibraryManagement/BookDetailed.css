@@ -1,0 +1,46 @@
+.bookDetailed__bookcontainer {
+  max-width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+.bookDetailed__body {
+  /* display: flex;
+  flex-direction: column; */
+}
+.bookDetailed__chatWindow {
+  margin-top: 10px;
+  position: absolute;
+  top: 90%;
+  /* border: 2px solid red; */
+  width: 100%;
+}
+.bookDetailed__chatform {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  /* border: 2px solid black; */
+}
+.bookDetailed__chatInput {
+  width: 80%;
+}
+.bookDetailed__indiChat {
+  width: 80%;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-image: linear-gradient(to right, #b3e0ff, #66c2ff);
+}
+.bookDetailed__indiChatTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.bookDetailed__indiChatTopContent {
+  font-weight: bold;
+}
+.bookDetailed__indiChatMiddle {
+  padding-left: 20px;
+  padding-right: 20px;
+}
